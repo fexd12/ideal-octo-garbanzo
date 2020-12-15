@@ -6,7 +6,7 @@ COPY . .
 
 RUN python -m venv venv
 
-RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev
+RUN apk update && apk add gcc python3-dev musl-dev
 
 RUN venv/bin/pip install -e .
 

@@ -1,5 +1,5 @@
 from flask import Blueprint
 
-bp = Blueprint('usuario',__name__)
+bp = Blueprint('predict',__name__)
 
 from . import routes
