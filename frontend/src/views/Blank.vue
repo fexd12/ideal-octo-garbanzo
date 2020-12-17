@@ -19,9 +19,9 @@
       </b-form-group>
     </div>
 
-		<div class="botao" v-if="response">
-			<span>Texto enviado</span>
-		</div>
+    <div class="botao" v-if="response">
+      <span>{{response}}</span>
+    </div>
   </div>
 </template>
 
@@ -30,38 +30,40 @@ export default {
   name: "Blank",
   data: () => {
     return {
-			imagem: null,
-			response:null
+      imagem: null,
+      response: null,
     };
   },
   methods: {
     uploadImage() {
-      // const URL = "http://localhost:3002/upload/";
-      // let config = {
-      //   header: {
-      //     "Content-Type": "application/json",
-      //   },
-			// };
-			
-			// let data = {
-			// 	imagem : this.imagem
-			// };
+      const URL = "http://localhost:2000/predict/";
+      let config = {
+        header: {
+          "Content-Type": "application/json",
+        },
+      };
 
-			this.response = true
-			console.log(this.response)
-      // this.$http.post(URL, data, config).then((response) => {
-      //   console.log("image upload response > ", response);
-      // });
+      let data = {
+        imagem: this.imagem,
+      };
+
+      this.$http.post(URL, data, config).then((response) => {
+            console.log("image upload response > ", response.data.img_classifier);
+            this.response = response.data.img_classifier;
+      });
     },
     upload_picture(event) {
+      let reader = new FileReader();
 
-			let reader = new FileReader();
+      reader.addEventListener(
+        "load",
+        () => {
+          this.imagem = reader.result;
+        },
+        false
+      );
 
-			reader.addEventListener("load",()=>{
-				this.imagem = reader.result;
-			},false);
-
-			reader.readAsDataURL(event.target.files[0]);			
+      reader.readAsDataURL(event.target.files[0]);
     },
   },
 };
