@@ -1,10 +1,27 @@
 # ideal-octo-garbanzo
 
-Pasta backend - python 3.7
-  Responsavel pelo recebimento de requisições do frontend para predict na qual classe pertence a imagem.
+  Projeto para classificar imagens da biblioteca mnist 
+
+# Pasta backend - python 3.7
+  Responsavel pelo recebimento de requisições do frontend para predict na qual classe pertence a imagem e pelo processamento da mesma.
   
   Atraves do framework Flask, recebe as imagens e fornece ao model.
   
-Pasta frontend - Vue Js
+  # Como usar ( backend )
+     - criar um ambiente virtual o python ( venv )
+        - python -m venv venv
+     - ativar o ambiente virtual
+        - windows 
+            - venv\Scripts\activate
+        - linux 
+            - source venv\bin\activate
+     - pip install -e . ( para instalar as dependencias )
+     - flask run ( ira rodar na pota 2000 ) 
+        - para alterar a porta de executar mudar no arquivo .flaskenv
+  
+# Pasta frontend - Vue Js
    Responsavel do envio da imagem ao backend para processamento e predict da classe a qual a imagem pertence, e mostrando a resposta ao usuario.
 
+   # Como usar ( frontend )
+     - npm install ( para instalar node_modules )
+     - npm start
