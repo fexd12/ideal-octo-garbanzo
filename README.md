@@ -1,7 +1,8 @@
 # ideal-octo-garbanzo
 
   Projeto para classificar imagens da biblioteca mnist 
-
+  link para visualização do model:
+  https://colab.research.google.com/drive/11Zm9pCTEYobObsmS3hzZHWWF2Q8gZ3Vb#scrollTo=-lCgz6UC8pKT
 # Pasta backend - python 3.7
   Responsavel pelo recebimento de requisições do frontend para predict na qual classe pertence a imagem e pelo processamento da mesma.
   
